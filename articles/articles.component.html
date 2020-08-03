@@ -1,0 +1,23 @@
+<h1>LISTE DES ARTICLES</h1>
+
+<a [routerLink]="['add']">Add</a> 
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let article of articles;">
+                <td>{{article.id}}</td>
+                <td>{{article.name}} </td>
+                <td>{{article.price}}</td>
+                <td><a [routerLink]="['edit',article.id]">Edit</a> | <a [routerLink]="['review',article.id]">Review</a>| <a [routerLink]="['delete',article.id]">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
